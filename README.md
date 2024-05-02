@@ -18,28 +18,28 @@ These instructions will get you a copy of the project up and running on your loc
 
 To get started, clone the repository to your local machine:
 
-git clone https://github.com/yourusername/transportation-management-system.git
+git clone https://github.com/RounakSen225/transportation-management-system.git
 cd transportation-management-system
 ## Setting Up the Backend
 Navigate to the backend directory from the root of the project:
 
-cd backend
+cd htms-backend
 ### Install the required Go modules (if any):
 
 go mod tidy
 ### Configuring the Environment
-Ensure your Go application is configured to connect to your database and other services. This might involve setting environment variables or configuring a .env file in your backend directory.
+Ensure your Go application is configured to connect to your database and other services. This might involve setting environment variables or configuring a .env file in your backend directory. Make sure to add the username nad password for your existing database (if not present, create a new PostgresSQL database)
 
 ## Starting the Server
 To start the Go server, run:
 
-go run main.go
+go run .
 This will start the backend server on http://localhost:8080.
 
 ## Setting Up the Frontend
 Open a new terminal window and navigate to the frontend directory from the root of the project:
 
-cd frontend
+cd htms-frontend
 ### Install the required npm packages:
 
 npm install
