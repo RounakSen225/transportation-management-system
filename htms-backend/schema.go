@@ -33,3 +33,14 @@ func createTables(db *sql.DB) error {
 	fmt.Println("Tables created successfully")
 	return nil
 }
+
+/*Uncomment to create table
+func main() {
+    db := dbConnect()
+    defer db.Close()
+
+	/*err := createTables(db) // This function is in schema.go
+	if err != nil {
+		log.Fatalf("Failed to create tables: %v", err)
+	}
+}*/

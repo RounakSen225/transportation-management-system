@@ -1,6 +1,6 @@
-# Transportation Management System
+# HealthCare Transportation Management System
 
-This Transportation Management System is designed to manage and track transportation events and client profiles. It features a React frontend and a Go backend, providing capabilities such as event logging, client management, and alert generation based on predefined criteria.
+This HealthCare Transportation Management System is designed to manage and track transportation events and client profiles. It features a React frontend and a Golang backend, providing capabilities such as event logging, client management, and alert generation based on predefined criteria.
 
 ## Prerequisites
 
@@ -28,7 +28,15 @@ cd htms-backend
 
 go mod tidy
 ### Configuring the Environment
-Ensure your Go application is configured to connect to your database and other services. This might involve setting environment variables or configuring a .env file in your backend directory. Make sure to add the username nad password for your existing database (if not present, create a new PostgresSQL database)
+Ensure your Go application is configured to connect to your database and other services. This might involve setting environment variables or configuring a .env file in your backend directory. Make sure to add the username nad password for your existing database in db.go (if not present, create a new PostgresSQL database)
+
+### Setting up the data
+
+go run generate_random_data.go
+
+### Viewing the data
+
+go run handlers.go
 
 ## Starting the Server
 To start the Go server, run:
@@ -44,7 +52,7 @@ cd htms-frontend
 
 npm install
 
-### Fix any bugs with installation (if required)
+### Fix any bugs after installation (if required)
 
 npm i react-scripts@latest
 

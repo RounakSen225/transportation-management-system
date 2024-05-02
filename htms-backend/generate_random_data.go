@@ -78,6 +78,10 @@ func main() {
     db := dbConnect()
     defer db.Close()
 
+	/*err := createTables(db) // This function is in schema.go
+	if err != nil {
+		log.Fatalf("Failed to create tables: %v", err)
+	}
     insertSampleData(db)
     fmt.Println("Sample data insertion complete.")
 }*/

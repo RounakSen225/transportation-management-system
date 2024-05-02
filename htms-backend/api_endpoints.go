@@ -26,7 +26,7 @@ func checkAndTriggerAlerts(db *sql.DB, clientID string) ([]Alert, error) {
 	if err != nil {
 		return nil, err
 	}
-	clientIDInt, err = strconv.Atoi(clientID)
+	clientIDInt, _ = strconv.Atoi(clientID)
 	threshold := 0.8 // Example threshold for alert
 	if clientSpending/clientBudget >= threshold {
 		alert := Alert{
@@ -44,14 +44,6 @@ func checkAndTriggerAlerts(db *sql.DB, clientID string) ([]Alert, error) {
 func main() {
 	db := dbConnect()
 	defer db.Close()
-
-	/*err := createTables(db) // This function is in schema.go
-	if err != nil {
-		log.Fatalf("Failed to create tables: %v", err)
-	}
-
-	insertSampleData(db)
-	fmt.Println("Sample data insertion complete.")*/
 
 	router := gin.Default()
 
