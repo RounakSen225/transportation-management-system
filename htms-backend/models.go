@@ -12,17 +12,16 @@ type Client struct {
 }
 
 type TransportationEvent struct {
-	ID              int       `json:"id"`
-	ClientID        int       `json:"client_id"`
+	ClientID        int       `json:"clientID"`
 	Date            time.Time `json:"date"`
 	Cost            float64   `json:"cost"`
-	ServiceProvider string    `json:"service_provider"`
+	ServiceProvider string    `json:"serviceProvider"`
 }
 
 // Define the Alert struct
 type Alert struct {
 	ID        int     `json:"id"`
-	ClientID  int     `json:"client_id"`
+	ClientID  int     `json:"clientID"`
 	Message   string  `json:"message"`
 	Triggered bool    `json:"triggered"`
 	Value     float64 `json:"value"`

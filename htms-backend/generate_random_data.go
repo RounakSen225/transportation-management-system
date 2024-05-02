@@ -72,3 +72,12 @@ func insertSampleData(db *sql.DB) {
 
 	fmt.Println("Sample data insertion complete.")
 }
+
+/*Uncomment to insert Sample data
+func main() {
+    db := dbConnect()
+    defer db.Close()
+
+    insertSampleData(db)
+    fmt.Println("Sample data insertion complete.")
+}*/

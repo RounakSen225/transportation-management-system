@@ -110,10 +110,10 @@ func main() {
 		}
 
 		// Insert the event into the database
-		query := `INSERT INTO transportation_events (client_id, date, cost, service_provider) VALUES ($1, $2, $3, $4) RETURNING id;`
-		err := db.QueryRow(query, event.ClientID, time.Now(), event.Cost, event.ServiceProvider).Scan(&event.ID)
+		query := `INSERT INTO transportation_events (client_id, date, cost, service_provider) VALUES ($1, $2, $3, $4);`
+		_, err := db.Exec(query, event.ClientID, time.Now(), event.Cost, event.ServiceProvider)
 		if err != nil {
-			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error() + event.ServiceProvider})
+			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 			return
 		}
 		c.JSON(http.StatusCreated, event)

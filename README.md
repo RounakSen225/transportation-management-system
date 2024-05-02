@@ -43,6 +43,11 @@ cd htms-frontend
 ### Install the required npm packages:
 
 npm install
+
+### Fix any bugs with installation (if required)
+
+npm i react-scripts@latest
+
 ## Starting the Frontend Application
 To start the React application, run:
 

@@ -3,7 +3,6 @@ package main
 import (
 	"database/sql"
 	"fmt"
-	"log"
 )
 
 // Fetch and print all clients from the database
@@ -39,7 +38,7 @@ func fetchTransportationEvents(db *sql.DB) ([]TransportationEvent, error) {
 	var events []TransportationEvent
 	for rows.Next() {
 		var e TransportationEvent
-		err := rows.Scan(&e.ID, &e.ClientID, &e.Date, &e.Cost, &e.ServiceProvider)
+		err := rows.Scan(&e.ClientID, &e.Date, &e.Cost, &e.ServiceProvider)
 		if err != nil {
 			return nil, fmt.Errorf("error scanning transportation event: %w", err)
 		}
@@ -48,7 +47,8 @@ func fetchTransportationEvents(db *sql.DB) ([]TransportationEvent, error) {
 	return events, nil
 }
 
-func main1() {
+/*Uncomment to view data in database
+func main() {
 	db := dbConnect()
 	defer db.Close()
 
@@ -67,6 +67,7 @@ func main1() {
 		log.Fatalf("Failed to fetch transportation events: %v", err)
 	}
 	for _, event := range events {
-		fmt.Printf("Event ID: %d, Client ID: %d, Date: %v, Cost: %.2f, Provider: %s\n", event.ID, event.ClientID, event.Date, event.Cost, event.ServiceProvider)
+		fmt.Printf("Client ID: %d, Date: %v, Cost: %.2f, Provider: %s\n", event.ClientID, event.Date, event.Cost, event.ServiceProvider)
 	}
 }
+*/
